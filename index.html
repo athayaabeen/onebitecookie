@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Bite Cookies</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <img src="logo.png" class="logo">
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="checkout.html">Cart (<span id="cart-count">0</span>)</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Freshly Baked<br>Happiness</h1>
+    <p>Premium cookies made with love</p>
+    <button class="btn">Shop Collection</button>
+  </div>
+
+  <div class="hero-image">
+    <img src="cookies.png">
+  </div>
+</section>
+
+<section class="products">
+  <h2>Our Collection</h2>
+
+ <div class="product-grid">
+
+  <div class="product-card">
+    <div class="img-box">
+      <img src="soft.jpg">
+    </div>
+    <div class="product-info">
+      <h3>Choco Milk Cookie</h3>
+      <p class="price">Rp 25.000</p>
+      <button class="add-btn" onclick="addToCart('Choco Milk Cookie',25000,this)">Add</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="img-box">
+      <img src="greentea white.png">
+    </div>
+    <div class="product-info">
+      <h3>Matcha White Chocolate</h3>
+      <p class="price">Rp 35.000</p>
+      <button class="add-btn" onclick="addToCart('Matcha White Chocolate',35000,this)">Add</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="img-box">
+      <img src="redvelvetwcheese.png">
+    </div>
+    <div class="product-info">
+      <h3>Red Velvet Cream Cheese</h3>
+      <p class="price">Rp 25.000</p>
+      <button class="add-btn" onclick="addToCart('Red Velvet Cream Cheese',25000,this)">Add</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="img-box">
+      <img src="chocooverload.png">
+    </div>
+    <div class="product-info">
+      <h3>Chocolate Overload</h3>
+      <p class="price">Rp 30.000</p>
+      <button class="add-btn" onclick="addToCart('Chocolate Overload',30000,this)">Add</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="img-box">
+      <img src="lotuscaramel.png">
+    </div>
+    <div class="product-info">
+      <h3>Lotus Caramel</h3>
+      <p class="price">Rp 30.000</p>
+      <button class="add-btn" onclick="addToCart('Lotus Caramel',30000,this)">Add</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="img-box">
+      <img src="monsterinc.png">
+    </div>
+    <div class="product-info">
+      <h3>Monster Cookie</h3>
+      <p class="price">Rp 30.000</p>
+      <button class="add-btn" onclick="addToCart('Monster Cookie',30000,this)">Add</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="img-box">
+      <img src="strawberrysorbet.png">
+    </div>
+    <div class="product-info">
+      <h3>Strawberry Sorbet</h3>
+      <p class="price">Rp 28.000</p>
+      <button class="add-btn" onclick="addToCart('Strawberry Sorbet',28000,this)">Add</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="img-box">
+      <img src="brownbutter.png">
+    </div>
+    <div class="product-info">
+      <h3>Brown Butter</h3>
+      <p class="price">Rp 28.000</p>
+      <button class="add-btn" onclick="addToCart('Brown Butter',28000,this)">Add</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="img-box">
+      <img src="pistachiokunafa.png">
+    </div>
+    <div class="product-info">
+      <h3>Pistachio Kunafa</h3>
+      <p class="price">Rp 35.000</p>
+      <button class="add-btn" onclick="addToCart('Pistachio Kunafa',35000,this)">Add</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="img-box">
+      <img src="rasberrychoco.png">
+    </div>
+    <div class="product-info">
+      <h3>Raspberry Choco</h3>
+      <p class="price">Rp 30.000</p>
+      <button class="add-btn" onclick="addToCart('Raspberry Choco',30000,this)">Add</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="img-box">
+      <img src="stawberrylemonade.png">
+    </div>
+    <div class="product-info">
+      <h3>Strawberry Lemonade</h3>
+      <p class="price">Rp 28.000</p>
+      <button class="add-btn" onclick="addToCart('Strawberry Lemonade',28000,this)">Add</button>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+</section>
+
+<div class="cart-popup">
+  <h3>Your Cart</h3>
+  <ul id="cart-items"></ul>
+  <p>Total: $<span id="total">0</span></p>
+
+  <button class="btn" onclick="goToCheckout()">Checkout</button>
+  <button class="btn secondary" onclick="clearCart()">Clear</button>
+</div>
+
+<div id="toast">Added to cart 💖</div>
+
+<div class="voucher-box">
+  <input type="text" id="voucher" placeholder="💌 Enter sweet code...">
+  <button onclick="applyVoucher()">Apply</button>
+</div>
+
+<p id="voucher-msg"></p>
+
+<script src="script.js"></script>
+</body>
+</html>

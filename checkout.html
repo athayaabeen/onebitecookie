@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <img src="logo.png" class="logo">
+  <a href="index.html">← Back</a>
+</header>
+
+<section class="checkout-page">
+
+  <!-- LEFT -->
+  <div class="checkout-form">
+    <h2>Delivery Details</h2>
+
+    <input type="text" placeholder="Full Name">
+    <input type="text" placeholder="Address">
+    <input type="text" placeholder="Phone Number">
+
+    <h3>Payment Method</h3>
+
+    <div class="payment-method">
+
+      <label>
+        <input type="radio" name="pay" checked>
+        <span>QRIS</span>
+      </label>
+
+      <label>
+        <input type="radio" name="pay">
+        <span>E-Wallet</span>
+      </label>
+
+      <label>
+        <input type="radio" name="pay">
+        <span>Bank</span>
+      </label>
+
+    </div>
+
+    <div class="qris-box" id="qrisBox">
+      <img src="https://via.placeholder.com/180">
+      <p>Scan QR to Pay</p>
+    </div>
+
+    <button class="btn full" onclick="placeOrder()">Confirm Order</button>
+  </div>
+
+  <!-- RIGHT -->
+<div class="checkout-summary">
+  <h3>Your Order</h3>
+
+  <ul id="checkout-items"></ul>
+
+<div class="summary-total">
+  <span>Subtotal</span>
+  <strong id="subtotal">Rp 0</strong>
+</div>
+
+<div class="summary-total" id="discount-row" style="display:none;">
+  <span>Discount (15%)</span>
+  <strong id="discount">-Rp 0</strong>
+</div>
+
+<div class="summary-total">
+  <span>Total</span>
+  <strong id="checkout-total">Rp 0</strong>
+</div>
+
+<div class="voucher-box">
+  <input type="text" id="voucher" placeholder="Enter voucher code">
+  <button onclick="applyVoucher()">Apply</button>
+</div>
+
+<p id="voucher-msg"></p>
+
+<script src="script.js"></script>
+</body>
+</html>
